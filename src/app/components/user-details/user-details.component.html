@@ -1,0 +1,65 @@
+<div class="user-details">
+  <po-list-view
+    p-property-title="detalhes"
+    [p-items]="[{ detalhes: 'Detalhes do Usuário' }]"
+  >
+    <ng-template p-list-view-content-template let-item>
+      <div class="po-row">
+        <po-info
+          class="po-md-12"
+          p-label="Nome:"
+          [p-value]="user.nome | dashIfEmpty"
+        ></po-info>
+      </div>
+      <po-divider></po-divider>
+      <div class="po-row">
+        <po-info
+          class="po-md-12"
+          p-label="Email:"
+          [p-value]="user.email | dashIfEmpty"
+        ></po-info>
+      </div>
+      <po-divider></po-divider>
+      <div class="po-row">
+        <po-info
+          class="po-md-12"
+          p-label="Telefone:"
+          [p-value]="user.telefone | phone "
+        ></po-info>
+      </div>
+      <po-divider></po-divider>
+      <div class="po-row">
+        <po-info
+          class="po-md-12"
+          p-label="Endereço:"
+          [p-value]="user.endereco | address"
+        ></po-info>
+      </div>
+      <po-divider></po-divider>
+      <div class="po-row">
+        <po-info
+          class="po-md-12"
+          p-label="Status:"
+          [p-value]="user.ativo | status"
+        ></po-info>
+      </div>
+      <po-divider></po-divider>
+      <div class="po-row">
+        <po-info
+          class="po-md-12"
+          p-label="Função:"
+          [p-value]="user.funcao | dashIfEmpty"
+        ></po-info>
+      </div>
+      <po-divider></po-divider>
+      <div class="po-row">
+        <po-info
+          class="po-md-12"
+          p-label="Data de Cadastro:"
+          [p-value]="(user.dataCadastro | date:'dd/MM/yyyy') ?? 'Data indisponível ou inválida'"
+        ></po-info>
+      </div>
+      <po-divider></po-divider>
+    </ng-template>
+  </po-list-view>
+</div>

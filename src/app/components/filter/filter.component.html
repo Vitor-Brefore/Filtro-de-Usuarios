@@ -1,0 +1,38 @@
+<div class="filter">
+  <div class="form">
+    <div class="form__name">
+      <po-input
+        p-placeholder="Ex. Fulano da Silva"
+        p-label="Nome"
+        [(ngModel)]="filterOptions.name"
+      ></po-input>
+    </div>
+
+    <div class="form__date-picker">
+      <po-datepicker-range
+        p-label="Data de Cadastro"
+        [p-start-date]="filterOptions.startDate"
+        [p-end-date]="filterOptions.endDate"
+        (p-change)="onDateChange($event)"
+      >
+      </po-datepicker-range>
+    </div>
+
+    <div class="form__status">
+      <po-select
+      name="select"
+      p-label="Status"
+      [p-options]="[
+          { label: 'Ativo', value: 1 },
+          { label: 'Inativo', value: 0 }
+        ]"
+        (p-change)="onStatusChange($event)"
+      >
+      </po-select>
+    </div>
+
+    <div class="form__button">
+      <po-button p-kind="primary" p-label="Filtrar" (p-click)="onFilter()"></po-button>
+    </div>
+  </div>
+</div>
