@@ -2,17 +2,19 @@ import { IFilterOptions } from '../interfaces/filter-options.interface';
 import { IUser } from '../interfaces/user/user.interface';
 import { isWithinInterval } from 'date-fns';
 
-const filteredUsersListByName = (name: string, usersList: IUser[]): IUser[] => {
-  const NAME_NOT_TYPPED = name === '' || undefined;
+const removeAccents = (text: string): string => 
+  text.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
-  if (NAME_NOT_TYPPED) {
+const filteredUsersListByName = (name: string, usersList: IUser[]): IUser[] => {
+  if (!name) {
     return usersList;
   }
 
-  const filteredList = usersList.filter((user) =>
-    user.nome.toLowerCase().includes(name.toLowerCase())
+  const normalizedSearch = removeAccents(name.toLowerCase());
+
+  return usersList.filter((user) => 
+    removeAccents(user.nome.toLowerCase()).includes(normalizedSearch)
   );
-  return filteredList;
 };
 
 const filteredUsersListByStatus = (
