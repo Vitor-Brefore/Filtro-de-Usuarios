@@ -29,6 +29,11 @@ export class AppComponent implements OnInit {
     this.showUserDetails = true;
   }
 
+  closeUserDetails() {
+    this.showUserDetails = false;
+    this.userSelected = {} as IUser;
+  }
+
   onFilter(filterOptions: IFilterOptions) {
     console.log(filterOptions);
 

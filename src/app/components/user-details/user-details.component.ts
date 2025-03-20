@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IUser } from '../../interfaces/user/user.interface';
 
 @Component({
@@ -10,4 +10,9 @@ import { IUser } from '../../interfaces/user/user.interface';
 })
 export class UserDetailsComponent {
   @Input({ required: true }) user: IUser = {} as IUser;
+
+  @Output() closeUserDetailsEmitt = new EventEmitter<boolean>();
+  closeUserDetails() {
+    this.closeUserDetailsEmitt.emit();
+  }
 }

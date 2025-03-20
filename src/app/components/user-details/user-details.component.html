@@ -1,4 +1,7 @@
 <div class="user-details">
+  <div class="closeUserDetails">
+    <po-button p-label="Fechar" p-icon="an an-x-circle" p-danger p-kind="primary" (p-click)="closeUserDetails()"></po-button>
+  </div>
   <po-list-view
     p-property-title="detalhes"
     [p-items]="[{ detalhes: 'Detalhes do Usuário' }]"
@@ -24,7 +27,7 @@
         <po-info
           class="po-md-12"
           p-label="Telefone:"
-          [p-value]="user.telefone | phone "
+          [p-value]="user.telefone | phone"
         ></po-info>
       </div>
       <po-divider></po-divider>
@@ -56,7 +59,10 @@
         <po-info
           class="po-md-12"
           p-label="Data de Cadastro:"
-          [p-value]="(user.dataCadastro | date:'dd/MM/yyyy') ?? 'Data indisponível ou inválida'"
+          [p-value]="
+            (user.dataCadastro | date : 'dd/MM/yyyy') ??
+            'Data indisponível ou inválida'
+          "
         ></po-info>
       </div>
       <po-divider></po-divider>
