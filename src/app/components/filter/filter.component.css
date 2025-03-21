@@ -28,7 +28,12 @@
     margin-top: 24px;
 }
 
-@media (max-width: 425px) {
+@media (max-width: 716px) {
+    .form {
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
     .form__date-picker {
         width: 85%;
     }
@@ -38,6 +43,6 @@
     }
 
     .form__status {
-        width: 60%;
+        width: 85%;
     }
 }
