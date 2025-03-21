@@ -28,7 +28,7 @@
     margin-top: 24px;
 }
 
-@media (max-width: 360px) {
+@media (max-width: 425px) {
     .form__date-picker {
         width: 85%;
     }
@@ -38,6 +38,6 @@
     }
 
     .form__status {
-        width: 52%;
+        width: 60%;
     }
 }
