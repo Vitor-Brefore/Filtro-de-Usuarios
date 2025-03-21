@@ -27,3 +27,17 @@
 .form__button {
     margin-top: 24px;
 }
+
+@media (max-width: 360px) {
+    .form__date-picker {
+        width: 85%;
+    }
+
+    .form__name {
+        width: 85%;
+    }
+
+    .form__status {
+        width: 52%;
+    }
+}
